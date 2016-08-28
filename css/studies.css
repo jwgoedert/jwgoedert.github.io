@@ -19,7 +19,8 @@ header {
 /* Main navigation menu */
 
 nav {
-    background: rgb(139, 80, 41);
+    /*background: rgb(139, 80, 41);*/
+    background:darkseagreen;
     border:2px;
     border-radius:15px;
     margin: 0 auto;
@@ -54,10 +55,11 @@ nav a {
 main {
     border:2px;
     border-radius:15px;
-    background: rgb(245, 238, 219);
+    /*background: rgb(245, 238, 219);*/
+    background:darkslategray;
     display: flex;
     flex-direction: column;
-    
+    color:goldenrod;
 }
 
 [class=sidebar] {
@@ -80,4 +82,7 @@ main {
 
 .content section > a {
     text-decoration: none;
+}
+.instructions a {
+    color: aquamarine;
 }
