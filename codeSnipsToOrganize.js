@@ -62,6 +62,33 @@ console.log(numToText2(str).join(' '));
   
   });
 
+//Counting parentheses step problem
+
+let parens = "((())))((((((";
+let countParen = (parenths) =>
+  parenths
+    .split('')
+    .reduce((count, item, i)=>{
+      if(item === '(') count++;
+      if(item === ')') count--;
+      if(count <= 0) count = 0;
+      return count;
+    }, 0);
+
+console.log(countParen(parens));//returns 3
+let parens = "((())))((((((";
+let countParen = (parenths) =>
+  parenths
+    .split('')
+    .reduce((count, item, i)=>{
+      if(item === '(') count++;
+      if(item === ')') count--;
+      if(count <= 0) count = 0;
+      return count;
+    }, 0);
+
+console.log(countParen(parens));//returns 3
+//RECURSION!!!!/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 //sum using recursion
 var sumRecursion
  = function(array) {
@@ -81,14 +108,49 @@ var sumRecursion
   var sum = 0
   var count = 0
 
-
 sumRecursion
 ([1,2,3]);
 
 console.log(sum);
 
+//A better sum sumthing- sum an array of integers
 
+let pracRay = [1,2,3,4,5];
+let sum = (arr, num) =>{
+  if(num === 1)return num;
+  return num += sum(arr, num - 1);
+}
+console.log(sum(pracRay, pracRay.length));
 
+//factorial with recursion
+
+let factorial = (num) =>{
+  if(num === 0)return 1;
+  return num * factorial(num - 1);
+}
+console.log(factorial(4));
+
+// Sum all numbers in an array containing nested arrays.
+var arraySum = function(array) {
+ 
+  let count = array.length - 1;
+   console.log(array,  "length " + array.length + " count " + count);
+  if(count < 1){
+    console.log("term");
+    return arraySum(array[0]);
+  } 
+  if (Array.isArray(array[count])){
+    return arraySum(array.pop()) + arraySum(array)
+  }
+  else if (array.length ){
+    return array[count] +  arraySum(array.slice(0, array.length -1))
+  }
+  else{
+    return array
+  }
+ 
+};
+console.log(arraySum([1,[2,3],[[4]],5,1,[2,[2]],[1,2,[[2,3,4]]]]));
 
 
 
