@@ -152,7 +152,29 @@ var arraySum = function(array) {
 };
 console.log(arraySum([1,[2,3],[[4]],5,1,[2,[2]],[1,2,[[2,3,4]]]]));
 
+//METHODS:
+//difference between push and concat
 
+var arr = ['a', 'b', 'c'];
+var x = arr.concat('d');
+
+console.log(arr);//logs ['a', 'b', 'c', 'd']
+console.log(x);// logs length of the array
+
+var arr1 = ['a', 'b', 'c'];
+var x1 = arr.concat('d');
+
+console.log(arr1);//logs ['a', 'b', 'c']
+console.log(x1);// logs['a', 'b', 'c', 'd']
+
+//sorting
+ var y = [1, 9, 3, 100, 800, 20].sort(function(a,b){
+ 	return a - b;
+ })
+
+$("li.recording").on('click', (e) => {
+	
+})
 
 
 
