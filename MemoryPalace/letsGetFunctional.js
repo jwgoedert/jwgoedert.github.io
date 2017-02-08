@@ -1,5 +1,5 @@
 //Let us get functional
-#!/usr/bin/env node
+//#!/usr/bin/env node
 
 'use strict';
 
