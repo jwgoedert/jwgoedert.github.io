@@ -38,5 +38,5 @@ let arrArrSum = [1,[2,3],[[4]],5];
 //???
 
 let isEven = (n) => n % 2 === 0;
-console.log(`Number is even ${isEven(9)});
+console.log(`Number is even ${isEven(9)}`);
 
