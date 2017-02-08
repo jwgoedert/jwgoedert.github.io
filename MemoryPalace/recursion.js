@@ -24,5 +24,19 @@ let sum1 = (arr)=>{
   return sum1(arrOfNums) ; 
 }
 console.log(sum1(arrOfNums));
+//Sum- Pure version 
+let sum2 = (arr, pos) =>{
+	if (pos === -1)return 0;
+    return arr[pos] + sum2(arr, pos - 1);
+}
+console.log(sum2(arrOfNums, arrOfNums.length -1));
 
-console.log('blahblabslbdfs');
+//Sum all numbers of an array containing nested arrays
+let arrArrSum = [1,[2,3],[[4]],5];
+
+//Check if a number is even
+//???
+
+let isEven = (n) => n % 2 === 0;
+console.log(`Number is even ${isEven(9)});
+
