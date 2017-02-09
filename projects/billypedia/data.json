@@ -8,7 +8,7 @@
             {"title": "The Water Is Wide", "artist": "Charles Lloyd", "release": "ECM", "year": 2000, "art": "images/album/the-water-is-wide.jpg"}
             ],
         "recordings": [
-            {"title": "Eastern Rebellion", "artist": "Cedar Walton", "release": "Timeless", "year": 1976, "art": "images/album/eastern-rebellion.jpg"},
+            {"title": "Eastern Rebellion", "artist": "`Cedar Walton", "release": "Timeless", "year": 1976, "art": "images/album/eastern-rebellion.jpg"},
             {"title": "Soul Food", "artist": "Bobby Timmons", "release": "Prestige", "year": 1966, "art": "images/album/soul-food.jpg"},
             {"title": "A Swingin' Affair", "artist": "Dexter Gordon", "release": "Blue Note", "year": 1962, "art": "images/album/a-swingin-affair.jpg"},
             {"title": "Rejoice", "artist": "Pharoah Sanders", "release": "Theresa", "year": 1981, "art": "images/album/rejoice.jpg"},

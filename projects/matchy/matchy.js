@@ -72,18 +72,18 @@ $(function(){
     });
     
     $('body').on('click', '.remove', function(){
-        window.remove($(this).parents(".animal").find(".anName").text());
+        window.remove($(this).parents(".animal").find(".anName").text()) 
         addAnimals(window.animals, "profiles");
     });
     // CREATE
     if(window.create && typeof window.create === "function"){
         $("#create").show();
         $("body").on("click", "#createBtn", function(){
-            var new_name = $(this).siblings("#newNameInp").val();
-            var new_species = $(this).siblings("#newSpeciesInp").val();
-            $(this).siblings("#newNameInp").val("");
-            $(this).siblings("#newSpeciesInp").val("");
-            window.create({name: new_name, species: new_species});
+            var new_name = $(this).siblings("#newNameInp").val()
+            var new_species = $(this).siblings("#newSpeciesInp").val()
+            $(this).siblings("#newNameInp").val("")
+            $(this).siblings("#newSpeciesInp").val("")
+            window.create({name: new_name, species: new_species})
             addAnimals(window.animals, "profiles");
         })
     }

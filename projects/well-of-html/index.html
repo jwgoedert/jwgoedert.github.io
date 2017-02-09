@@ -10,29 +10,120 @@
     <script type="text/javascript" src="bower_components/notes/notes.js"></script>
     <title>A Well of HTML</title>
     <style type="text/css">
-
+        
     </style>
 </head>
 
 <body>
     <div id="container" class="container">
         <!-- ALL YOUR MARKUP GOES BELOW HERE -->
-        <a href="https://wikipedia.org/wiki/Thomas_Crean"></a>
-        <img src="img/black-currant.jpg" />
+        <a href="https://en.wikipedia.org/wiki/World">The Werld</a>
+        <img src="img/cherries.jpg"/>
+        <div id = "all-headings">
+            <h1><small>This is a small H1</small></h1>
+            <h1>This is an H1!</h1>
+            <h2>This is an H2!</h2>
+            <h3>This is an H3!</h3>
+            <h4>This is an H4!</h4>
+            <h5>This is an H5!</h5>
+            <h6>This is an H6!</h6>
+        </div>
+        <div id="paragraph">
+            <p>This is just a little paragraph about nothing at all <br>
+            Also, html is the <b>paradise</b> to <i>jquery</i>  <em>purgatory</em> just before<br>
+            diving into...well... somewhere <strong>else</strong>. 
+            </p>
+        </div>
+        <div id="unordered-list">
+            <ul>Just a little Unordered listy listy
+                <li>This is the first thingy</li>
+                <li>This is the second thingy</li>
+                <li>This is the third thingy</li>
+                <li>This is the fourth thingy</li>
+            </ul>
+        </div>
+        <div id="ordered-list">
+           <ol>This list is ordered as *uck!
+               <li>blah1</li>
+               <li>blah2</li>
+               <li>blah3</li>
+               <li>blah4</li>
+               <li>blah5</li>
+           </ol> 
+        </div>
+        <div id="definition-list">
+            <dl>
+              <dt>America</dt>
+              <dd>A fuckin mess.</dd>
+              <dt>France</dt>
+              <dd>Also a fuckin mess, but prettier.</dd>
+            </dl>
+        </div>        
+        <div id="form">
+            <form class="person-object-interaction">
+                <div>
+                    <label for="person">Person:</label>
+                    <input type="person" id="person" />
+                </div>
+                <div>
+                    <label for="object">Object:</label>
+                    <input type="object" id="object" />
+                </div>
+                <div>
+                    <label for="interaction">interaction:</label>
+                    <input type="interaction" id="interaction" />
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea id="description"></textarea>
+                </div>
+            
+                <div class="button">
+                    <button type="submit">Send your message</button>
+                </div>
+            </form>
+        </div>
 
-        <h1><small>the</small></h1>
-        <h2>very</h2>
-        <h3>small</h3>
-        <h4>james</h4>
-        <h5>site</h5>
-        
-    <pThis is the <b>Big</b> little site we are <i>using</i> in order to learn <em>html and css</em>.
-    </p>
-
+        <div id="table">
+            <table>
+                <thead>
+                    <th>Memory Practice</th>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                        </tr>
+                    </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Names of people for card deck</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Robert</td>
+                        <td>DeNiro</td>
+                    </tr>
+                    <tr>
+                        <td>Al</td>
+                        <td>Pacino</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+        <div id="flexbox-example">
+            <div class="flex-row">
+                <div>One</div>
+                <div>Two</div>
+                <div>Three</div>
+                <div>Four</div>
+                <div>Five</div>
+            </div>
+        </div>
         <!-- ALL YOUR MARKUP GOES ABOVE HERE -->
+        
     </div>
     <script>
-        $(function() {
+        $(function () {
             window.opspark.notes.show();
         });
     </script>

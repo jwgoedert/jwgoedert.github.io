@@ -7,7 +7,7 @@
     //                     ┌ Change this to what it should be
     assert.equal( value, 'hello tests');
     //                           ┌ Change this to what it should be
-    assert.equal( some_number, 484);
+    assert.equal( some_number, '484');
   });
 
   QUnit.test("Functions can access outer scope.", function(assert){
@@ -57,7 +57,7 @@
         in_foo = this.from_yay;
       }
       assert.equal(in_foo, "i'm in foo");
-      assert.equal(this.from_yay, undefined );
+      assert.equal(this.from_yay, undefined);
     }
     yay();
     foo();
@@ -91,7 +91,7 @@
     yay();
     assert.equal(this.counter, undefined);
     yay();
-    assert.equal(this.counter, null);
+    assert.equal(this.counter, undefined);
   });
 
   QUnit.test("Inner scope can access outer scope", function(assert){
@@ -100,7 +100,6 @@
       var im_inside = "omega";
       return im_outside + im_inside;
     }
-
     assert.equal(yay(), "alphaomega");
   });
 

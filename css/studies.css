@@ -2,7 +2,7 @@ body {
     background: rgb(125, 198, 205);
     color: rgb(45, 45, 45);
     padding: 10px;
-    font-family: arial;
+    font-family: "andale mono";
 }
 
 header {
@@ -46,9 +46,9 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    /*color: #fff;*/
+    color:white;
 }
-
 
 /* Main container area beneath menu */
 
@@ -60,6 +60,7 @@ main {
     display: flex;
     flex-direction: column;
     color:goldenrod;
+    color: white;
 }
 
 [class=sidebar] {
@@ -78,6 +79,7 @@ main {
 
 .content h1, h2, h3, h4, h5, h6 {
     margin: 10px;
+    color:white;
 }
 
 .content section > a {
@@ -85,4 +87,12 @@ main {
 }
 .instructions a {
     color: aquamarine;
+}
+#variable{
+    color: white;
+    font-family:"andale mono";
+    
+}
+a{
+    color:white;
 }

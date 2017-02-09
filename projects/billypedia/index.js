@@ -1,130 +1,110 @@
 /* global $ _ opspark */
-$(document).ready(function () {
+$(document).ready(function() {
     $.getJSON('data.json', function (data) {
-            // YOUR CODE BELOW HERE //
-
-            // SECTION TOP RATED //
-            //data set
-            let topRated = data.discography.topRated;
-            //find image within data set
-            const firstImageTop = _.first(topRated).art;
-            //prepending or placing image then title at top of top-rated section
-            $("#section-top-rated")
-                .prepend($('<img>', {
-                    id: "image-top-rated",
-                    class: "image",
-                    src: firstImageTop
-                }))
-                .prepend($("#header-top-rated"));
-            //pulling out list items from data array and returning them wrapped in 
-            //jquery li tags with class of recording by 'title'
-            const topRatedListItems = _.map(topRated, function (recording) {
-                return $('<li>')
-                    .attr('recording-type', 'top-rated')
-                    .data('recording', recording)
-                    .addClass('recording')
-                    .text(truncateString(recording.title, 25));
-            });
-            //creating a variable
-            const $topRatedList = $('#list-top-rated');
-            $topRatedList.append(topRatedListItems);
-
-
-            // SECTION GENERAL RECORDINGS //
-            //data set
-            const generalRecordings = data.discography.recordings;
-            //creating a new section in sidebar 
-            const $sectionRecordings = $('<section>')
-                .attr('id', 'section-recordings')
-                .addClass('section-recordings')
-                .appendTo('#sidebar');
-            // header
-            const $titleGeneral = $('<header>')
-                .attr('id', 'header-recordings')
-                .text('General Recordings')
-                .addClass('header-recordings')
-                .appendTo('#section-recordings');
-            // img
-            const firstImageUrl = _.first(generalRecordings).art;
-            $sectionRecordings.append($('<img>', {
-                id: 'image-general',
-                class: 'image',
-                src: firstImageUrl
-            }));
-
-            //list of recordings
-            const $listRecordings = $('<ul>')
-                .attr('id', 'list-recordings')
-                .addClass('list-recordings');
-            const listGeneralRecordings = _.map(generalRecordings, function (recording) {
-                return $('<li>')
-                    .attr('recording-type', 'general')
-                    .data('recording', recording)
-                    .addClass('recording')
-                    .text(truncateString(recording.title, 25));
-            });
-            $listRecordings.append(listGeneralRecordings);
-            $sectionRecordings.append($listRecordings);
-
-            $('.recording').on('click', function(event) {
-                const 
-                    $li = $(event.currentTarget),
-                    recording = $li.data('recording'),
-                    type = $li.attr('recording-type');
-                    
-                $(`#image-${type}`).attr('src', recording.art);
-            });
-
-            //Changing Billy Image
-            const billyImages = data.images.billy;
-            var i = 0;
-            $('#image-billy').on('click', function () {
-                i++;
-                if(i >= billyImages.length) i = 0;
-                $("#image-billy").attr('src', billyImages[i]);
-            });
-
-            const $sectionTesting = $('<section>')
-                .attr('id', 'section-testing')
-                .addClass('section-testing')
-                .appendTo('#sidebar');
-
-            const $titleTesting = $('<header>')
-                .attr('id', 'header-testing')
-                .text('Testing 1-2')
-                .addClass('header-recordings')
-                .appendTo('#section-testing');
-            // YOUR CODE ABOVE HERE //
+        // YOUR CODE BELOW HERE //
         
-        //Create rider table!!
-            //rider data
-            var createTable = function(items){
-                var createRow = function(item){
-                    var $row = $("<tr>");
-                    var $type = $("<td>").text(item.type);
-                    var $desc = $("<td>").text(item.desc);
-                    $row.append($type);
-                    $row.append($desc);
-                    return $row;
-                }
-                var $table = $("<table>");
-                var $rows = items.map(createRow);
-                var $caption = $("<caption>").text("Billy's Rideroo!!");
-                $table.append($caption);
-                $table.append($rows).attr("id","rider-data");
-                return $table;
-            };
-                       let items = data.rider;
-            createTable(items).appendTo("#sections");
+        // uncomment this to inspect all available data; delete when done //
+        // console.log(data);
+        
+        // EXAMPLE: Looping over top rated recordings; replace with your code //
+        // let topRated = data.discography.topRated;
+        // _.forEach(topRated, function(recording) {
+        //     console.log(recording);
+        // })
+        
+        //get data for recordings
+        let topRated = data.discography.topRated;
+        console.log(`Toprated: ${topRated}`);
+        let recordings = data.discography.recordings;
+        console.log(`Recordings: ${recordings}`);
+        //make a "make list" function
+        function makeList(dataArray) { 
+            return _.map(dataArray, (disc) =>{
+            let $li = $('<li>')
+            .addClass('recording')
+            _.each (disc, (discInfo, key ) =>{
+        	let $div = $('<div>')
+				// .text (`${key[0].toUpperCase() + key.slice(1)}: ${discInfo}`)
+                .text (`${key}: ${discInfo}`)
+		        .appendTo ($li)
+                .data('recording', disc);         
+            });
+		    console.log($li);
+			return $li;
+            });
+        }
+        let topRatedList = makeList(topRated);
+        console.log("blah" + topRatedList);
+        $('#list-top-rated').append(topRatedList);
+        
+        let recordingsList = makeList(recordings);
+        //console.log(topRated);
+        
+       // $('#list-top-rated').append(topList);
+        
+        //add new list of other recordings
+        let $recordings = $('<section>').attr('id','section-recordings');
+        let $ul = $('<ul>')
+            .attr( 'id', 'list-recordings')
+            .addClass('list-recordings');
+        ($recordings).append($ul);
+        $('#sidebar').append($recordings);
+        
+        
+        //get recording data and append to $recordings section list
+        
+        //fetch location of image
+        var topRatedImageLocation = data.discography.topRated[0].art;
+        var recordingImageLocation = data.discography.topRated[1].art;
+        //create new div for images
+        let $imgDiv = $('<div>')
+            .addClass('image-container')
+            .attr('id', 'image-container-recording');
+        
+        //create the new image element for topRated
+        let $topRatedImage = $('<img>')
+            .attr('src', topRatedImageLocation)    
+            .attr('id', 'topRated-image')
+            .addClass('image');
+        
+        //create the new image element for recordings
+        let $recordingsImage = $('<img>')
+            .attr('src', recordingImageLocation)    
+            .attr('id', 'recording-image')
+            .addClass('image');
+            
+            
+        //append topRated image to div
+        //append div to $('#list-top-rated')     
+        $('#list-top-rated').prepend($imgDiv).prepend($topRatedImage); 
+        
+        //prepend recordings image to div
+        //prepend div to $($recordings)     
+        $recordings.prepend($imgDiv).prepend($recordingsImage); 
+        
+        //changing billy's images when clicked tests
+        //get billly's list of images
+        let billyImages = data.images.billy;
+        console.log(billyImages);
+        //make click function
+             var count = 0;
+        $('#image-billy').on('click', function(event){
+           
+            //change attribute of image-billy to next image
+            if(count === billyImages.length - 1) count = -1;
+                count = count + 1;
              
+             $('#image-billy').
+                attr('src', billyImages[count]);
+            return;    
+                     
+        })
         
+        $('#section-bio').css('background-color', 'darkseagreen').css('border-radius', '4px');
+        $('#section-quotes').css('background-color', 'darkseagreen').css('border-radius', '4px');
+        
+        
+        // YOUR CODE ABOVE HERE //
     })
-        .fail(function () {
-            console.log('getJSON on discography failed!');
-        });
-   
+    .fail(function() { console.log('getJSON on discography failed!'); });
 });
-
-function truncateString(string, length) {
-    return string.length > length ? string.substring(0, length) + '...' : string;
-}
