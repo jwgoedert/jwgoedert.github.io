@@ -1,5 +1,6 @@
 /*global $*/
 /*global _*/
+//Swapping things from my mac to cloud 9 & git
 $(document).ready(function(){
     
     // const loadData = () => {
