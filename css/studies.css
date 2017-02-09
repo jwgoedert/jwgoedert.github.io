@@ -56,7 +56,8 @@ main {
     border:2px;
     border-radius:15px;
     /*background: rgb(245, 238, 219);*/
-    background:darkslategray;
+    /*background:darkslategray;*/
+    background:white;
     display: flex;
     flex-direction: column;
     color:goldenrod;
@@ -88,6 +89,7 @@ main {
 .instructions a {
     color: aquamarine;
 }
+<<<<<<< HEAD
 #variable{
     color: white;
     font-family:"andale mono";
@@ -96,3 +98,12 @@ main {
 a{
     color:white;
 }
+=======
+a {
+    color:darkseagreen;
+}
+#variables{
+    text-decoration:none;
+    color: darkseagreen;
+}
+>>>>>>> 65e7319da458d10fe64fe74cc72b59212985106e
