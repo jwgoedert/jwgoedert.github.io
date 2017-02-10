@@ -245,7 +245,20 @@ console.log(divide3(96, 8));
 //14.  GCD - find the greatest common divisor of two numbers
 
 
-//15.  
+//15. Compare String: Compare two strings one char at a time 
+//and return true if they're the same.
+
+let compareStr = (str1, str2) => {
+  if (str1.length !== str2.length)return false;
+  if(str1[str1.length -1] !== str2[str2.length -1])return false;
+  if(str1.length < 1)return str1 === str2;
+  return compareStr(str1.slice(0, -1), str2.slice(0, -1));
+}
+
+console.log(compareStr('hello','hello'));
+
+//16.Create an Array: take a string and create an array where each letter takes a position
+
 
 
 
