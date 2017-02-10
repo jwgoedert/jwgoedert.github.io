@@ -88,6 +88,59 @@ let countParen = (parenths) =>
     }, 0);
 
 console.log(countParen(parens));//returns 3
+//mapObject:  maps an object and takes in a callback
+let mapObject = (object, action, exception) => {
+  let transObject = {};
+    for(var key in object){
+        transObject[key] = action(object[key], key, object);
+    }
+  return transObject;
+}
+
+let sanitize = (value, key) => {
+  if (value === exception)return value;
+  return value.toUpperCase();
+}
+console.log(mapObject(input, sanitize));
+/////mapObject
+let input=
+{
+  first_name: "James",
+  last_name: "Hu",
+  gender: "Male",
+  biography: "Oh hey, I'm just a guy"
+}
+//I: Input- Source Object
+//O: Output- Object with altered values
+//C: Contraints - do not apply callback to last item
+//E: Edge Cases: what if it's not an object
+
+//declare a map object
+//with arguments of object and callback function
+//if(object[key] === exception) 
+    
+
+let mapObject = (object, action) => {
+  let transObject = {};
+    for(var key in object){
+      console.log(key);
+      if(key === 'biography'){
+        transObject[key] = object[key];
+      } else  {
+        transObject[key] = action(object[key], key, object);
+      }
+    }
+  return transObject;
+}
+
+let sanitize = (value, key) => {
+  return value.toUpperCase();
+}
+mapObject(input, sanitize);
+
+
+
+
 //RECURSION!!!!/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 //sum using recursion
 var sumRecursion
@@ -104,6 +157,34 @@ var sumRecursion
   }
 
 }
+// 3. Sum all numbers in an array containing nested arrays.
+//let arraySum = [1,[2,3],[[4]],5];
+// sum flatten with Antoine
+var arraySum = function(array) {
+ 
+  let count = array.length - 1;
+   console.log(array,  "lenght" + array.length + " count" + count);
+//let sum = 0;
+  if(count < 1){
+    console.log("term");
+    return arraySum(array[0]);
+  } 
+  if (Array.isArray(array[count])){
+    return arraySum(array.pop()) + arraySum(array)
+  }
+  else if (array.length ){
+    return array[count] +  arraySum(array.slice(0, array.length -1))
+  }
+  else{
+    //arraySum(array);
+    return array
+  }
+ 
+ 
+  //return arraySum(array.slice(0, array.length -1));
+};
+console.log(arraySum([1,[2,3],[[4]],5,1,[2,[2]],[1,2,[[2,3,4]]]]));
+
 
   var sum = 0
   var count = 0
@@ -152,6 +233,19 @@ var arraySum = function(array) {
 };
 console.log(arraySum([1,[2,3],[[4]],5,1,[2,[2]],[1,2,[[2,3,4]]]]));
 
+//REDUCE!!!!!
+//Largest number in an Array
+      var ratings = [2,3,1,9,4,5];
+      
+      console.log(ratings.reduce((largest, num ) =>{
+        console.log(largest, num);
+        if(largest < num) largest = num;
+        return largest;
+      },0));
+
+
+
+
 //METHODS:
 //difference between push and concat
 
@@ -175,6 +269,43 @@ console.log(x1);// logs['a', 'b', 'c', 'd']
 $("li.recording").on('click', (e) => {
 	
 })
+
+
+///Ali Practice
+let input=
+{
+  first_name: "James",
+  last_name: "Hu",
+  gender: "Male",
+  biography: "Oh hey, I'm just a guy"
+}
+//I: Input- Source Object
+//O: Output- Object with altered values
+//C: Contraints - do not apply callback to last item
+//E: Edge Cases: what if it's not an object
+
+//declare a map object
+//with arguments of object and callback function
+//if(object[key] === exception) 
+    
+
+let mapObject = (object, action) => {
+  let transObject = {};
+    for(var key in object){
+      console.log(key);
+      if(key === 'biography'){
+        transObject[key] = object[key];
+      } else  {
+        transObject[key] = action(object[key], key, object);
+      }
+    }
+  return transObject;
+}
+
+let sanitize = (value, key) => {
+  return value.toUpperCase();
+}
+mapObject(input, sanitize);
 
 
 
