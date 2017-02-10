@@ -299,7 +299,16 @@ var buildList = function(value, length) {
 };
 console.log(buildList("haha", 15));
 
-//
+//19. Count occurrence: count the number of occurences of a value in 
+// an array.
+let count = 0;
+var countOccurrence = function(array, value) {
+  if(array.length < 1)return count;
+  if(array[array.length - 1] === value) count += 1;
+  return  countOccurrence(array.slice(0, -1), value);
+  
+};
+console.log(countOccurrence([2,'banana',4,4,1,'banana'], 'banana'));
 
 
 
