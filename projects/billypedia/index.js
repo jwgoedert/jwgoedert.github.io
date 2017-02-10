@@ -27,11 +27,16 @@ $(document).ready(function() {
 				// .text (`${key[0].toUpperCase() + key.slice(1)}: ${discInfo}`)
                 .text (`${key}: ${discInfo}`)
 		        .appendTo ($li)
-                .data('recording', disc);         
+		        .on('click', function(event){
+		            
+		            console.log('just clicked it!')
+		        })
+                //.data('recording', disc);         
             });
 		    console.log($li);
 			return $li;
             });
+            
         }
         let topRatedList = makeList(topRated);
         console.log("blah" + topRatedList);
