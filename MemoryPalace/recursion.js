@@ -259,6 +259,25 @@ console.log(compareStr('hello','hello'));
 
 //16.Create an Array: take a string and create an array where each letter takes a position
 
+var newArr = [];
+let createArrayReverse = (str) => {
+  if (str.length < 1) return newArr;
+  newArr.push(str[str.length -1]);
+  return createArrayReverse(str.slice(0, -1));
+  
+}
+console.log(createArrayReverse("blahblah"))
+
+var newArr1 = [];
+let createArray = (str) => {
+  if (str.length < 1) return newArr1;
+  newArr1.push(str.slice(0, 1));
+  return createArray(str.slice(1));
+  
+}
+console.log(createArray("blahblah"))
+
+
 
 
 
