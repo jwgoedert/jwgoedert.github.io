@@ -310,6 +310,30 @@ var countOccurrence = function(array, value) {
 };
 console.log(countOccurrence([2,'banana',4,4,1,'banana'], 'banana'));
 
+//20. Recursive Maps: Map using recursion
+//Reverse Recursive map
+let timesTwo = (n) =>{
+  return n * 2;
+}
+var newArrR = [];
+var rRevMap = function(array, callback) {
+  if(array.length < 1) return newArrR;
+  let index = array.length - (array.length -1);
+  newArrR.push(callback(array[array.length - 1], array.length -1, array));
+  return rRevMap(array.slice(0,-1), callback);
+};
 
+console.log(rRevMap([1,2,3],timesTwo));
 
+//Recursive Map 
 
+var newArr = [];
+var rMap = function(array, callback) {
+  if(array.length < 1) return newArr;
+  let index = array.length - (array.length -1);
+  newArr.unshift(callback(array[array.length - 1], array.length -1, array));
+  return rMap(array.slice(0,-1), callback);
+};
+console.log(rMap([1,2,3],timesTwo));
+
+//
