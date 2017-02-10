@@ -288,6 +288,19 @@ let createArrayReverse = (arr) => {
 }
 console.log(createArrayReverse(createArray([1,2,3,4,5,6,7])));
 
+//18. Build List: given a value and a number make an array with 
+//that many of the values
+
+let newArr = [];
+var buildList = function(value, length) {
+  if(length < 1)return newArr;
+  newArr.push(value);
+  return buildList(value, length -1);
+};
+console.log(buildList("haha", 15));
+
+//
+
 
 
 
