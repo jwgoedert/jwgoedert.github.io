@@ -113,10 +113,71 @@ console.log(`${pOfTwoNum} is a power of two? ${powerOfTwo(32)}`);
 //11. Modulo- take to numbers and return the remainder without %
 
 //12.  Multiply- multiplies two numbers without using *
+var multiply = function(x, y) {
+  console.log(`comes in as ${x}`)
+if(y === 1) return x;
+  let result = x += multiply(x, y - 1);
+  console.log(`results in ${result}`);
+  return result;
+};
+console.log(multiply(2,3));
 
 //13.  Divide- divides two numbers without using the /
+console.clear();
+var count =0;
+var divide = function(x, y) {
+  console.log(`comes in as ${x}`)
+  //count ++;
+  if(x < 1) return count;
+  let result = divide(x - y, y) - y;//doesn't need the - y crazy pants
+  console.log(count ++);
+  console.log(`results in ${result}`);
+  return count;
+
+//   return divide(x - 1, y) - y;
+var count =0;
+var divide = function(x, y) {
+  console.log(`comes in as ${x}`)
+  //count ++;
+  if(x < 1) return count;
+  let result = divide(x - y, y) - y;
+  console.log(count ++);
+  console.log(`results in ${result}`);
+  return count;
+
+//   return divide(x - 1, y) - y;
+};
+console.log(divide(39, 13));
+
+var count =0;
+var divide2 = function(x, y) {
+  console.log(`comes in as ${x}`)
+  if(x < 1) return count;
+
+  let result = divide2(x - y, y);
+  console.log(count ++);
+
+  console.log(`${x} - ${y} =${x - y}`);
+  console.log(`results in ${result}`);
+  
+
+
+  return count;
+
+
+};
+console.log(divide2(96, 8));
+
+var count =0;
+var divide3 = function(x, y) {
+  if(x < 1) return count;
+  count ++;
+  return divide3(x - y, y);
+};
+console.log(divide3(96, 8));
 
 //14.  GCD - find the greatest common divisor of two numbers
+
 
 //15.  
 
