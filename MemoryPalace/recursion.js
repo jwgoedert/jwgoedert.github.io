@@ -153,7 +153,29 @@ let reverseStr = (str)=>{
 console.log(reverseStr('hello'));
 
 //10. Palindrome- determine whether a string is a palindrome or not
+      
+let palindromeFunc = (str1, str2) => {
+  if( str1 === revStr(str2))return true;
+  return false;
+}
+console.log(palindromeFunc("hello", "olleh"));
 
+//non-working attempt without using reverse function
+// var newStr2 = '';
+// var strOrig  '';
+// let palindrome = ((str1, str2)=>{
+//     if(str1.length < 1){ 
+//       console.log(`${newStr1} = ${str2}?`);
+//       return newStr1 === str2;
+//     }
+//     newStr2 += str1.slice(-1);
+//     console.log(str2 + " " + str1);
+//     return palindrome(str1.slice(0,-1), str2);
+    
+ 
+// });
+// console.log(palindrome("hello","olleh"));
+            
 //11. Modulo- take to numbers and return the remainder without %
 
 //12.  Multiply- multiplies two numbers without using *
