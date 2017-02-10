@@ -108,6 +108,50 @@ console.log(`${pOfTwoNum} is a power of two? ${powerOfTwo(32)}`);
 
 //9. Reverse String: takes a string and reverses it. 
 
+// // console.clear();
+// //kind of working
+// var newStr = "";
+
+// let reverseStr = (str)=>{
+//   //console.log(str);
+//   if(str.length < 1) return newStr;
+//   console.log(newStr.concat(str.slice(0,1)));
+//   return reverseStr(str.slice(1));
+//   }
+
+// console.log(reverseStr('hello'));
+
+console.clear();
+// var newStr = "";
+
+// let reverseStr = (str)=>{
+
+//   console.log(`String enters as ${str}`);
+//   if(str.length < 1) return newStr;
+//   let letter = `${str.slice(0,1)} is the letter to add`;
+//   console.log(letter);
+//   newStr += str.slice(0,1);
+//   return  reverseStr(str.slice(1));
+  
+// }
+
+// console.log(reverseStr('hello'));
+
+var newStr = "";
+
+let reverseStr = (str)=>{
+
+  console.log(`String enters as ${str}`);
+  if(str.length < 1) return newStr;
+  let letter = `${str.slice(0,1)} is the letter to add`;
+  console.log(letter);
+  newStr += str.slice(-1);
+  return  reverseStr(str.slice(0, -1));
+  
+}
+
+console.log(reverseStr('hello'));
+
 //10. Palindrome- determine whether a string is a palindrome or not
 
 //11. Modulo- take to numbers and return the remainder without %
