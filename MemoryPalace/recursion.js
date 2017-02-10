@@ -277,7 +277,16 @@ let createArray = (str) => {
 }
 console.log(createArray("blahblah"))
 
+//17. Reverse Array: reverse an array.
 
+var newArr = [];
+let createArrayReverse = (arr) => {
+  if (arr.length < 1) return newArr;
+  newArr.push(+(arr.slice(-1)));
+  return createArrayReverse(arr.slice(0, -1));
+  
+}
+console.log(createArrayReverse(createArray([1,2,3,4,5,6,7])));
 
 
 
