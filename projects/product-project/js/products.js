@@ -8,16 +8,19 @@ $(document).ready(function() {
 
     // };
     let allProducts;
-
+     
     const renderProducts = (products) => {
         var mappedList =
-            products.map((productObject, i) => {
+            products.map((val, key) => {
+                let $desc = val.desc; 
+                let $image = val.image;
+                let $price = val.price;
+                let $color = val.color;
                 let $li = $('<li>')
-                    .attr('id', i)
-                    .addClass('phones')
-                _.each((val, key, col) => {
-                    console.log(val);
-                });
+                    .append($desc)     
+                        
+                console.log("this is the val", val);
+                //(productObject).appendTo($li);
                 return $li;
             });
         $("#products").append(mappedList);
@@ -33,8 +36,8 @@ $(document).ready(function() {
             renderProducts(allProducts);
         });
 
-        
+
     };
-    
+
     init();
 });
