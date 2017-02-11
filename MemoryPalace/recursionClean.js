@@ -12,12 +12,11 @@ factorial(4);
 //2. Sum- take an array of integers and return the sum.
 //this is an impure version of Sum, but need to tighten up the game.  
 //Sum- Pure version 
-let sum = (arr, pos) =>{
-	if (pos === -1)return 0;
-    return arr[pos] + sum(arr, pos - 1);
+let sum = (arr) =>{
+  if (arr.length < 1) return 0;
+  return arr[arr.length -1] += (sum(arr.slice(0,-1)));
 }
-console.log(sum(arrOfNums, arrOfNums.length -1));
-
+sum([1,2,3,4,5]); 
 //3. Sum all numbers of an array containing nested arrays
 let arrArrSum = [1,[2,3],[[4]],5];
 
@@ -53,7 +52,6 @@ console.log(range(2,6));
 var exponent = function(base, exp) {
   
   if(exp === 1)return base;
-  console.log(base, exp);
   return base * exponent(base, exp -1);
   
 };
@@ -67,8 +65,7 @@ let powerOfTwo = (num) =>{
   if (num < 2)return false;
   return powerOfTwo(num/2);
 }
-let pOfTwoNum = 32;
-console.log(`${pOfTwoNum} is a power of two? ${powerOfTwo(32)}`);
+powerOfTwo(32);
 
 //9. Reverse String: takes a string and reverses it. 
 //badass reverse function
