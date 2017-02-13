@@ -109,9 +109,68 @@ console.log(countChar("kakkerlak", "k"));
 // → 4
 
 //Chapter 4: Datastructures- Objects and Arrays.
-//Problem 1:
+//Problem 1:// Range and Sum functions;
+var range = function(start, end, step){
+var arr = [];
+  if(step === undefined){
+  step = 1;
+  }
+  if(start < end) {
+  for(var i = start; i <= end; i += step){
+  	arr.push(i);
+  }
+  }else if (start > end) {
+  for(var i = start; i >= end; i += step){
+  	arr.push(i);
+  }
+  }  
+return arr;
+}
+var sum = function(arr){
+var sum = 0;	
+  for (var i = 0; i < arr.length; i++){
+    sum += arr[i];
+    }
+return sum;
+}
+
+console.log(range(1, 10));
+// → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(range(5, 2, -1));
+// → [5, 4, 3, 2]
+console.log(sum(range(1, 10)));
+// → 55
+
+//Problem 2: reverseArray and reverseArrayInPlace
+
+var reverseArray = function(arr){
+  var newArr = [];
+  for (var i = arr.length -1; i >= 0; i--){
+  newArr.push(arr[i]);
+  }
+  return newArr;
+}
 
 
+var reverseArrayInPlace = function(arr){
+  for(var i = arr.length - 1; i >= 0; i--){
+    arr.push(arr[i]);
+    arr.splice(i,1);
+  }
+   return arr;
+}
+//Problem 3: A list- turn an array into a list
+
+console.clear();
+var arrayToList = function(arr){
+  let newObj = {value:arr[0], rest:null};
+  if(arr.length <= 1){ 
+      return newObj;
+    };
+  newObj.rest = arrayToList(arr.slice(1));
+  return newObj;
+	}
+console.log(JSON.stringify(arrayToList([1,2,3,4])));
 
 
 
