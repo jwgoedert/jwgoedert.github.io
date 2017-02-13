@@ -163,8 +163,19 @@ let reverseStr = (str)=>{
   return  reverseStr(str.slice(0, -1));
   
 }
-
+//badass reverse function
+let reverseStr = str => 
+  str.length < 1 ? 
+    str : str.slice(-1) + reverseStr(str.slice(0, -1));
+  
+reverseStr('hello');
 console.log(reverseStr('hello'));
+//my latest
+let reverseStr = (str)=>{
+  if(str.length < 1) return str;
+  return str.slice(-1) + reverseStr(str.slice(0, -1));
+
+}
 
 //10. Palindrome- determine whether a string is a palindrome or not
       
