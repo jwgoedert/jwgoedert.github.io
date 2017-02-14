@@ -307,6 +307,23 @@ let sanitize = (value, key) => {
 }
 mapObject(input, sanitize);
 
+//SetTimeout_TIMEOUT fun
+
+setTimeout(function(){
+  asyc1 += 1;
+}, 1000);
+
+var async1 = 0;
+for (var i = 10; i < 13; i++){
+  setTimeout(() =>{
+    
+  }, i);
+}
+setTimeout (() =>{
+  console.log(async1);
+  done();
+},200);
+
 
 
 
