@@ -13,16 +13,19 @@ $(document).ready(function() {
         var mappedList =
             products.map((val, key) => {
                 let $desc = val.desc; 
-                let $image = val.image;
-                let $price = val.price;
+                let $image =$('<img class="image">').attr( 'src', 'img/product/thumbs/' + val.image);
+                let $price = $("div").text(val.price);
                 let $color = val.color;
-                let $li = $('<li>')
-                    .append($desc)     
-                        
+                let $li = $('<li>');
+                $li.append($image)
+                    .append($desc) 
+                    .append($price)
+                    .append($color)
                 console.log("this is the val", val);
                 //(productObject).appendTo($li);
                 return $li;
             });
+            
         $("#products").append(mappedList);
     };
 
