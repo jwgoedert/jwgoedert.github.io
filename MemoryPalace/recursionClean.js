@@ -25,7 +25,7 @@ let arrArrSum = [1,[2,3],[[4]],5];
 let isEven = (n) => {
 	if (n === 0) return true;
 	if (n === 1) return false;
-	return isEven(n/2);
+	return isEven(n - 2);
 }
 isEven(9);
 //5. SumBelow- given a number give the sum of all the numbers below it.

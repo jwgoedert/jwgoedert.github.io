@@ -1,6 +1,9 @@
 body {
     background-color: #f8f8f8;
 }
+ul.products{
+    display:flex;
+}
 
 /* Remove margins and padding from the list, and add a black background color */
 ul.topnav {

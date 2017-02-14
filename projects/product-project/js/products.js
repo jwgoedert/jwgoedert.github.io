@@ -14,10 +14,12 @@ $(document).ready(function() {
             products.map((val, key) => {
                 let $desc = val.desc; 
                 let $image =$('<img class="image">').attr( 'src', 'img/product/thumbs/' + val.image);
-                let $price = $("div").text(val.price);
+                // let $price = $("div").text(val.price);
+                let $price = val.price;
+                let $div = $('<div>');
                 let $color = val.color;
-                let $li = $('<li>');
-                $li.append($image)
+                let $li = $('<li>')
+                    .append($image)
                     .append($desc) 
                     .append($price)
                     .append($color)

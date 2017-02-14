@@ -160,16 +160,15 @@ var reverseArrayInPlace = function(arr){
    return arr;
 }
 //Problem 3: A list- turn an array into a list
-
-console.clear();
 var arrayToList = function(arr){
   let newObj = {value:arr[0], rest:null};
   if(arr.length <= 1){ 
       return newObj;
     };
-  newObj.rest = arrayToList(arr.slice(1));
-  return newObj;
-	}
+//   newObj.rest = arrayToList(arr.slice(1));
+//   return newObj;
+     return Object.assign({}, newObj, {rest: arrayToList(arr.slice(1))})
+}
 console.log(JSON.stringify(arrayToList([1,2,3,4])));
 
 

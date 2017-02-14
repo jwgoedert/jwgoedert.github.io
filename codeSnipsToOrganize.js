@@ -324,6 +324,60 @@ setTimeout (() =>{
   done();
 },200);
 
+///garbage experiment with objects and delete
+let obj = {
+  name: "james",
+  lastname: "goedert",
+  age: 31,
+}
+console.log(Object.keys(obj));
+console.log(obj);
+obj.age = null;
+//console.log(obj);
+delete(obj.age);
+//console.log(obj);
+delete(obj.lastName);
+console.log(obj);
+obj.lastname = null;
+delete obj.lastname;
+console.log(obj);
+//obj.name = null;
+delete obj.name;
+console.log(obj);
+console.log(Object.keys(obj));
+
+
+// let keyCount =(obj, key)=>{
+//   let keys = Object.keys(obj);
+//   if(obj === []){
+    
+//   };
+  
+// }
+
+//code dungeon
+
+console.clear();
+//range
+let range = (n1,n2) =>{
+  console.log
+  if ( n1 === n2){
+    return [n1];
+  }
+  return [n1].concat(range(n1 + 1, n2));
+}
+console.log(range(2, 6));
+//console.clear();
+var count =0;
+var divide = function(x, y) {
+  console.log(`comes in as ${x}`)
+  //count ++;
+  if(x < 1) return count;
+  let result = divide(x - y, y) - y;//doesn't need the - y crazy pants
+  console.log(count ++);
+  console.log(`results in ${result}`);
+  return count;
+
 
 
 
