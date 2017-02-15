@@ -170,3 +170,12 @@ function customersHaveFriends(customers, target){
     console.log(findTags(customers, 3));
 
 // 10: Create a summary of genders, the output should be:
+
+var _.reduce = function(collection, fn, seed){
+    var prevResult = seed;    
+    if(seed === undefined) seed = collection[0], prevResult = 1;
+    _.each(collection, function(el, i, collection){
+        prevResult = fn(prevResult, el, i);
+    });
+    return prevResult;   
+}

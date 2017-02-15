@@ -9,7 +9,7 @@ ul.products{
 #products li {
     list-style: none;
 }
-li #1{
+#1{
     background-color: blue;
 }
 
