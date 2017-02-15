@@ -378,7 +378,91 @@ var divide = function(x, y) {
   console.log(`results in ${result}`);
   return count;
 
+/////Ali's recursion reverse examples:
+// // let str = "hello";
+// // var reversStr = function(str){
+// //   if(str.length < 1)return str;
+// //   return str(1)
+// // }
 
+// //recursion with inner function
+// var reversStr1 = function(str){
+//   var res = '';
+//   var inner = function(res, left){
+//     if(!str.length){
+//       return;
+//     } else {
+//       res += left[0];
+//       return inner(res, left.slice(1));
+//     }
+//   }
+//   inner(res, str);
+//   return res;
+// }
+//   console.log(reverseStr(str));
 
+// //without result
+// //recursion with inner function
+// var reversStr1 = function(str){
+//   var res = '';
+//   var inner = function(left){
+//     if(!left.length){
+//       return;
+//     } else {
+//       res += left[left.length - 1];
+//       return inner( left.slice(-1));
+//     }
+//   }
+//   inner(str);
+//   return res;
+// }
+//   console.log(reverseStr1('hello'));
+
+//accessing params
+// var reverseStr2 = function(str){
+//   var res = Array.from(arguments)[1] || '';//making an argument
+//   if(!str.length){
+//     return res;
+//   }
+//   res += str[str.length - 1];
+//   return reverseStr2(str.slice(0,-1), res);
+// }
+// console.log(reverseStr2('hello'));
+
+var reverseStr3 = function(str){
+  if(!str.length){
+    return '';
+  }
+  return str[str.length-1] + reverseStr(str.slice(0,-1));
+}
+console.log(reverseStr3('hello'));
+
+//factorial recursive with ali
+var factorial = function(num, res = 1){
+  console.log(res);
+  if(num ===1){
+    return res;
+  }
+  res *= num;
+  return factorial(--num, res);
+}
+
+var factorial = function(num, res){
+  let res = Array.from(arguments)[1] || 1;
+  console.log(res);
+  if(num ===1){
+    return res;
+  }
+  res *= num;
+  return factorial(--num, res);
+}
+//tail-end
+var factorial = function(num){
+  if(num === 1){
+    return num;
+  }
+  return num * factorial(--num);
+}
+                       
 
 

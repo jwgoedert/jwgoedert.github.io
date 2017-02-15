@@ -2,7 +2,15 @@ body {
     background-color: #f8f8f8;
 }
 ul.products{
-    display:flex;
+    display: flex;
+    list-style-type: none;
+    list-style: none;
+}
+#products li {
+    list-style: none;
+}
+li #1{
+    background-color: blue;
 }
 
 /* Remove margins and padding from the list, and add a black background color */
