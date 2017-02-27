@@ -21,7 +21,7 @@ $(document).ready(function() {
                 let $div = $('<div>');
                 let $color = val.color;
                 let $li = $('<li>')
-                    .attr('id', `data-id-${val.id}`).css('background-color',rgb(x - 25,x - 25,x - 25))
+                   // .attr('id', `data-id-${val.id}`).css('background-color',rgb(x - 25,x - 25,x - 25))
                     .append($image)
                     .append($desc) 
                     .append($price)

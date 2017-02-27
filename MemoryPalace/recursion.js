@@ -362,3 +362,15 @@ var rMap = function(array, callback) {
 console.log(rMap([1,2,3],timesTwo));
 
 //
+// map using recursion!
+var mapRec = (array, fn, index = 0, col = []) =>{
+//   console.log(array[index]);
+//   console.log(index);
+//   console.log(`col is ${col}`);
+  if(index > array.length - 1){
+    return col;
+  }
+  
+  col.push(fn(array[index], index, array));
+  return mapRec(array, fn, index += 1, col);
+}
