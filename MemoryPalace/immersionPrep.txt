@@ -5,3 +5,10 @@ Git business://
 3. add a remote, link the repo to the repo on the internet using
 	git remote add upstream https://url
 4. 
+
+git commands for controlling logging:
+git log --pretty=oneline --max-count=2
+git log --pretty=oneline --since='5 minutes ago'
+git log --pretty=oneline --until='5 minutes ago'
+git log --pretty=oneline --author=<your name>
+git log --pretty=oneline --all
