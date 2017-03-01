@@ -1,3 +1,5 @@
+#going to be fooling around with this fun stuff for a bit, to start on the precourse prep
+#just adding some text to make a new commit and see it's working well. 
 # Twittler
 
 ### What's Already Here

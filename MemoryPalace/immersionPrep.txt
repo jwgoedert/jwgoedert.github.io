@@ -1,0 +1,7 @@
+Immersion Prep notes:
+Git business://
+1. Fork a repo.
+2. Clone the repo to your local machine using git clone and the url//
+3. add a remote, link the repo to the repo on the internet using
+	git remote add upstream https://url
+4. 
